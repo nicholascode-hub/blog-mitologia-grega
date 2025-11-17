@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ deus.nome }}</title>
+</head>
+
+<body>
+    <h1>{{ deus.nome }}</h1>
+    {% if deus.imagem %}
+    <img src="{{ deus.imagem.url }}" alt="{{ deus.nome }}">
+    {% endif %}
+    <p>{{ deus.descricao }}</p>
+
+    <h3>Família</h3>
+    <p>{{ deus.familia|default:"Informação não disponível" }}</p>
+
+    <h3>Atributos e Símbolos</h3>
+    <p>{{ deus.atributos|default:"Informação não disponível" }}</p>
+
+    <h3>Mitos Importantes</h3>
+    <p>{{ deus.mitos|default:"Informação não disponível" }}</p>
+</body>
+
+</html>

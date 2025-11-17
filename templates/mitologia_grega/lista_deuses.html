@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Deuses Gregos</title>
+</head>
+
+<body>
+    <h1>Deuses da Mitologia Grega</h1>
+    {% for deus in deuses %}
+    <div>
+        <h2><a href="{% url 'detalhe_deus' deus.id %}">{{ deus.nome }}</a></h2>
+        <p>{{ deus.categoria }}</p>
+    </div>
+    {% endfor %}
+</body>
+
+</html>

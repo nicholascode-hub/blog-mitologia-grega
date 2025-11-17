@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% block title %}Os 12 Deuses do Olimpo{% endblock %}
+
+{% block extra_css %}
+<style>
+    .intro {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .intro h2 {
+        font-size: 2em;
+        color: #ffd700;
+        margin-bottom: 20px;
+    }
+
+    .intro p {
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #e0e0e0;
+    }
+
+    .deuses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .deus-card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 215, 0, 0.3);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .deus-card:hover {
+        transform: translateY(-5px);
+        border-color: #ffd700;
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .deus-card .emoji {
+        font-size: 3em;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .deus-card h3 {
+        font-size: 1.5em;
+        color: #ffd700;
+        margin-bottom: 10px;
+    }
+
+    .deus-card a {
+        display: block;
+        color: inherit;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+        color: #ffd700;
+        margin: 40px 0 20px 0;
+        text-align: center;
+        border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        padding-bottom: 10px;
+    }
+
+    .hades-section {
+        margin-top: 40px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="intro">
+    <h2>Bem-vindo ao Blog da Mitologia Grega</h2>
+    <p>Explore as histórias e características dos Deuses do Olimpo, as divindades mais reverenciadas da mitologia grega.
+        Clique em cada divindade para conhecer sua história, símbolos e influência.</p>
+</div>
+
+<h3 class="section-title">Os 12 Deuses do Olimpo</h3>
+
+<div class="deuses-grid">
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'zeus' %}">
+            <span class="emoji">⚡</span>
+            <h3>Zeus</h3>
+            <p>Rei dos Deuses</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'hera' %}">
+            <span class="emoji">👑</span>
+            <h3>Hera</h3>
+            <p>Rainha dos Deuses</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'poseidon' %}">
+            <span class="emoji">🌊</span>
+            <h3>Poseidon</h3>
+            <p>Deus dos Mares</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'atena' %}">
+            <span class="emoji">🦉</span>
+            <h3>Atena</h3>
+            <p>Deusa da Sabedoria</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'ares' %}">
+            <span class="emoji">⚔️</span>
+            <h3>Ares</h3>
+            <p>Deus da Guerra</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'demeter' %}">
+            <span class="emoji">🌾</span>
+            <h3>Deméter</h3>
+            <p>Deusa da Colheita</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'apolo' %}">
+            <span class="emoji">☀️</span>
+            <h3>Apolo</h3>
+            <p>Deus do Sol</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'artemis' %}">
+            <span class="emoji">🌙</span>
+            <h3>Ártemis</h3>
+            <p>Deusa da Caça</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'hefesto' %}">
+            <span class="emoji">🔨</span>
+            <h3>Hefesto</h3>
+            <p>Deus da Forja</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'afrodite' %}">
+            <span class="emoji">💖</span>
+            <h3>Afrodite</h3>
+            <p>Deusa do Amor</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'hermes' %}">
+            <span class="emoji">🕊️</span>
+            <h3>Hermes</h3>
+            <p>Mensageiro dos Deuses</p>
+        </a>
+    </div>
+
+    <div class="deus-card">
+        <a href="{% url 'detalhes_deus' 'dionisio' %}">
+            <span class="emoji">🍇</span>
+            <h3>Dionísio</h3>
+            <p>Deus do Vinho</p>
+        </a>
+    </div>
+</div>
+
+<div class="hades-section">
+    <h3 class="section-title">Deuses Importantes Fora do Olimpo</h3>
+
+    <div class="deuses-grid">
+        <div class="deus-card">
+            <a href="{% url 'detalhes_deus' 'hades' %}">
+                <span class="emoji">💀</span>
+                <h3>Hades</h3>
+                <p>Deus do Submundo</p>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

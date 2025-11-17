@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ deus.nome }} - {{ deus.titulo }}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .deus-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 3px solid rgba(255, 215, 0, 0.3);
+    }
+
+    .deus-header .emoji {
+        font-size: 5em;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .deus-header h2 {
+        font-size: 2.5em;
+        color: #ffd700;
+        margin-bottom: 10px;
+    }
+
+    .deus-info {
+        background: rgba(255, 255, 255, 0.05);
+        border-left: 4px solid #ffd700;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 5px;
+    }
+
+    .deus-info p {
+        margin: 15px 0;
+        font-size: 1.1em;
+        line-height: 1.8;
+    }
+
+    .deus-info strong {
+        color: #ffd700;
+        font-weight: bold;
+    }
+
+    .descricao {
+        margin: 30px 0;
+        font-size: 1.15em;
+        line-height: 2;
+        text-align: justify;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    .voltar-btn {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 12px 30px;
+        background: rgba(255, 215, 0, 0.2);
+        border: 2px solid #ffd700;
+        border-radius: 5px;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+    }
+
+    .voltar-btn:hover {
+        background: rgba(255, 215, 0, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="deus-header">
+    <span class="emoji">{{ deus.emoji }}</span>
+    <h2>{{ deus.nome }}</h2>
+</div>
+
+<div class="deus-info">
+    <p><strong>Domínio:</strong> {{ deus.dominio }}</p>
+    <p><strong>Símbolos:</strong> {{ deus.simbolos }}</p>
+    <p><strong>Genealogia:</strong> {{ deus.genealogia }}</p>
+    <p><strong>Características:</strong> {{ deus.caracteristicas }}</p>
+</div>
+
+<div class="descricao">
+    <p>{{ deus.descricao }}</p>
+</div>
+
+<a href="{% url 'index' %}" class="voltar-btn">← Voltar à Home</a>
+{% endblock %}
